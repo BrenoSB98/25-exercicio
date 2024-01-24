@@ -23,7 +23,7 @@ for element in doubleReturn(list):
 # 3 - Crie uma classe iterável chamada “Tabuada” que calcule a tabuada da 
 # multiplicação do número recebido no construtor. 
 # A cada iteração ela deve retornar um resultado da tabuada. 
-# Para testar use um laço for.
+# Para testar use um laço for..
 class MultiplicationTable:
     def __init__(self, x):
        self.x = x

@@ -5,9 +5,9 @@ from random import randrange
 # par ou impar.
 num = randrange(2, 100)
 if num // 2 == 0:
-    print(f'par. O número gerado é {num}')
+    print(f'Par. The number generated is {num}')
 else:
-    print(f'impar. O número gerado é {num}')
+    print(f'Impar. The number generated is {num}')
     
 # 2 - Da mesma forma que o exercício anterior, gere a soma de 100 números 
 # aleatórios e mostre o resultado final.

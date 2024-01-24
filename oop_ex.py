@@ -1,83 +1,83 @@
-# 1 - Crie uma classe para representar um carro. Ele deve ter um atributo que 
+# 1 - Crie uma classe para representar um carr. Ele deve ter um atributo que 
 # diga sua potência em cavalos. Outro atributo deve dizer quanto de gasolina 
 # por quilômetros ele consome. Cria duas instâncias e mostre os valores.
-class CarroPotencia:
-    def __init__(self, potencia, alcance):
-        self.potencia = potencia
-        self.alcance = alcance
+class CarPower:
+    def __init__(self, power, range):
+        self.power = power
+        self.range = range
 
-carro1 = CarroPotencia(100,200)
-carro2 = CarroPotencia(200,350.5)
+car1 = CarPower(100,200)
+car2 = CarPower(200,350.5)
 
-print("Potência do carro 1: ", carro1.potencia, " cavalos")
-print("Alcance do carro 1: ", carro1.alcance, " Km/l")
+print("Car Power 1: ", car1.power, " horses")
+print("Car range 1: ", car1.range, " Km/L")
 
-print("Potência do carro 2: ", carro2.potencia, " cavalos")
-print("Alcance do carro 2: ", carro2.alcance, " Km/l")
+print("Car Power 2: ", car2.power, " horses")
+print("Car range 2: ", car2.range, " Km/L")
 
-# 2 - Cria uma classe que represente uma pessoa. Ela deve possuir um nome, 
+# 2 - Cria uma classe que represente uma pessoa. Ela deve possuir um name, 
 # CPF e um dependente, onde o dependente é outra pessoa. 
 # Dependente não é obrigatório. Crie duas instâncias: pai e filho, 
 # e imprima as saídas.
-class Pessoa:
-    def __init__(self, nome, cpf, dependente="Sem Dependentes"):
-        self.nome = nome
+class Person:
+    def __init__(self, name, cpf, dependent="No dependents"):
+        self.name = name
         self.cpf = cpf
-        self.dependente = dependente
+        self.dependent = dependent
 
-filho = Pessoa("Rodrigo","200.300.400-45")
-pai = Pessoa("Fernando","100.200.300-34",filho)
+child = Person("Rodrigo","200.300.400-45")
+father = Person("Fernando","100.200.300-34",child)
 
-print("Nome: ", filho.nome, " CPF: ", filho.cpf, " Dependente: " , filho.dependente )
-print("Nome: ", pai.nome, " CPF: ", pai.cpf, " Dependente: " , pai.dependente.nome )
+print("Name: ", child.name, " CPF: ", child.cpf, " Dependent: " , child.dependent )
+print("Name: ", father.name, " CPF: ", father.cpf, " Dependent: " , father.dependent.name )
 
 # 3 - Crie uma classe base que represente um veículo. 
-# Os atributos devem ser peso do veiculo, número de rodas e potência.
-# Crie uma função na classe base que diga a distância percorrida. Vamos supor que esse valor é dado pela peso do veículo
+# Os atributos devem ser weight do veiculo, número de rodas e potência.
+# Crie uma função na classe base que diga a distância percorrida. Vamos supor que esse valor é dado pela weight do veículo
 # dividido pela potência do veículo vezes mil.
 # Crie os operador '>' e '<' para dizer qual veículo é mais potente. Compare um de cada tipo.
 # Observação, sobrescreva os métodos __lt__ e __gt__
 # Em seguida crie três classes que herdam esse veículo: ônibus, carro e moto.
 # Crie uma instância de cada tipo e imprima as instâncias
-class Veiculo:
-    def __init__(self, peso, num_rodas, potencia):
-        self.peso = peso
-        self.num_rodas = num_rodas
-        self.potencia = potencia
-    def distancia_percorrida(self):
-        return (self.potencia / self.peso ) * 1000
+class Vehicle:
+    def __init__(self, weight, num_tyres, power):
+        self.weight = weight
+        self.num_tyres = num_tyres
+        self.power = power
+    def distance_travelled(self):
+        return (self.power / self.weight ) * 1000
     def __lt__(self,outro) :
-        return self.potencia < outro.potencia
+        return self.power < outro.power
     def __gt__(self, outro):
-        return self.potencia > outro.potencia
+        return self.power > outro.power
 
-class Onibus (Veiculo):
-    def __init__(self, peso, num_rodas, potencia):
-        super().__init__(peso, num_rodas, potencia)
+class Bus (Vehicle):
+    def __init__(self, weight, num_tyres, power):
+        super().__init__(weight, num_tyres, power)
 
-class Moto (Veiculo):
-    def __init__(self, peso, num_rodas, potencia):
-        super().__init__(peso, num_rodas, potencia)
+class Motorcycle (Vehicle):
+    def __init__(self, weight, num_tyres, power):
+        super().__init__(weight, num_tyres, power)
 
-class Carro (Veiculo):
-    def __init__(self, peso, num_rodas, potencia):
-        super().__init__(peso, num_rodas, potencia)
+class Car (Vehicle):
+    def __init__(self, weight, num_tyres, power):
+        super().__init__(weight, num_tyres, power)
 
-onibus = Onibus(1000, 6, 400)
-carro = Carro(300, 4, 100)
-moto = Moto(100, 2, 50)
+bus = Bus(1000, 6, 400)
+car = Car(300, 4, 100)
+motorcycle = Motorcycle(100, 2, 50)
 
-print("Onibus, Peso: ", onibus.peso, " Número de Rodas: ", onibus.num_rodas, " Potência: ", onibus.potencia)
-print("Carro, Peso: ", carro.peso, " Número de Rodas: ", carro.num_rodas, " Potência: ", carro.potencia)
-print("Moto, Peso: ", moto.peso, " Número de Rodas: ", moto.num_rodas, " Potência: ", moto.potencia)
+print("Onibus, Weight: ", bus.weight, " Number of Tyres: ", bus.num_tyres, " Power: ", bus.power)
+print("Car, Weight: ", car.weight, " Number of Tyres: ", car.num_tyres, " Power: ", car.power)
+print("Moto, Weight: ", motorcycle.weight, " Number of Tyres: ", motorcycle.num_tyres, " Power: ", motorcycle.power)
 
-print("Distancia Percorrida do onibus: ", onibus.distancia_percorrida())
-print("Distancia Percorrida do carro: ", carro.distancia_percorrida())
-print("Distancia Percorrida da moto: ", moto.distancia_percorrida())
+print("Distance Travelled by the bus: ", bus.distance_travelled())
+print("Distance Travelled by the car: ", car.distance_travelled())
+print("Distance Travelled by the motorcycle: ", motorcycle.distance_travelled())
 
-print(onibus > carro)
-print(onibus < moto)
-print(moto > carro)
+print(bus > car)
+print(bus < motorcycle)
+print(motorcycle > car)
 
 # 4 - Cria uma classe que represente um número negativo, 
 # use propriedades (@property)  para controlar o valor guardado pela classe, 
@@ -118,16 +118,16 @@ print(num1 - num2)
 
 def testa_objeto(obj):
   if isinstance(obj, (int, float, str, bool)):
-    print("Objeto por valor")
+    print("Object per value")
   else:
-    print("Objeto por referência")
+    print("Object per reference")
 
 class Objeto:
   def __init__(self):
     pass
 
 obj = Objeto()
-valor = 3
+value = 3
 
 testa_objeto(obj)
-testa_objeto(valor)
+testa_objeto(value)

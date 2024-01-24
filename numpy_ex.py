@@ -45,8 +45,8 @@ print(array[2,:])
 # imprima a soma de cada linha.
 array = np.random.randint(1, 50,(3, 3))
 print(array)
-for linha in array:
-    print(np.sum(linha))
+for line in array:
+    print(np.sum(line))
 
 # 9.Gere um array com os valores pares de 0 a 100 com list comprehension.
 print(np.array([i for i in range(0, 101) if i % 2 == 0]))
@@ -63,7 +63,7 @@ print(array.reshape(6,6))
 # mesmo formato gere uma exceção.
 def combineArray(arr1, arr2, arr3):
     if arr1.shape != arr2.shape or arr1.shape != arr3.shape or arr3.shape != arr2.shape:
-        raise Exception('O formato dos arraay são diferentes')
+        raise Exception('The format of the lists are diferent')
     return np.concatenate((arr1, arr2, arr3))
 
 array1 = np.array([1,2,3])
